@@ -1,0 +1,25 @@
+# Spring Configuration
+spring:
+
+  # Database Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee?useUnicode=yes&characterEncoding=UTF-8&characterSetResults=UTF-8
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    # Hikari Configuration
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      pool-name: SpringBootJPAHikariCP
+      max-lifetime: 2000000
+      connection-timeout: 30000
+
+# Management Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
